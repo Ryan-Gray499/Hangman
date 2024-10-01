@@ -28,12 +28,12 @@ print(random_word)
 
 # Create function to check if guess is in the word
 
-def check_guess(guess):
-    guess.lower()
-    if guess in random_word:
-        print(f"Good guess, {guess} is in word")
+def check_guess(user_guess):
+    user_guess.lower()
+    if user_guess in random_word:
+        print(f"Good guess, {user_guess} is in word")
     else:
-        print(f"sorry, {guess} is not in the word")
+        print(f"sorry, {user_guess} is not in the word")
 
 
 # create function that asks user for an input
