@@ -1,3 +1,14 @@
+# import necessary packages
+import random
+
+# Create list of words
+word_list = ["Bananna", "Satsuma", "Pear", "Strawberry", "Apple"]
+
+# get random word from the list
+random_word = random.choice(word_list)
+print(random_word)
+
+
 # take a guess from user and check it is valid input
 while True:
     guess = input("Please guess a letter: ")
@@ -5,3 +16,10 @@ while True:
         break
     else:
         print("Invalid letter. Please, enter a single alphabetical character.")
+
+
+# check if guess is in word
+if guess in random_word:
+    print(f"Good guess, {guess} is in word")
+else:
+    print(f"sorry, {guess} is not in the word")
