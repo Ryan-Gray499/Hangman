@@ -5,12 +5,13 @@ word_list = ["Bananna", "Satsuma", "Pear", "Strawberry", "Apple"]
 print(word_list)
 
 # get random element of list
-word = random.choice(word_list)
-print(word)
+random_word = random.choice(word_list)
+print(random_word)
 
 # get user input letter
 guess = input("Guess a letter")
 
+# check input is a single character
 if len(guess) <= 1:
     print("Good guess!")
 else:
