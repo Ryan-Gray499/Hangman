@@ -10,16 +10,32 @@ class Hangman():
         self.word_list = word_list
         self.word = random.choice(word_list)
         self.list_of_guesses = []
-        self.word_guessed = [self.word_guessed.append("_") for letter in self.word if letter not in self.list_of_guesses]
+        self.word_guessed = ["_" for letter in self.word if letter not in self.list_of_guesses]
         _unique_letters = set(list(self.word))
         self.num_letters = len(_unique_letters)
         self.num_lives = num_lives
+    
+    def check_guess(self, guessed_letter):
+        guessed_letter = guessed_letter.lower()
+        if guessed_letter in self.word:
+            print(f"Good guess, {guessed_letter} is in word")
+    
+    def ask_for_input(self):
+        while True:
+            guessed_letter = input("Please guess a letter: ")
+            if len(guessed_letter) == 1 and guessed_letter.isalpha() == False:
+                print("Invalid letter. Please, enter a single alphabetical character.")
+            elif guessed_letter in self.list_of_guesses:
+                print("You already tried that letter")
+            else:
+                self.check_guess(guessed_letter)
+                self.list_of_guesses.append(guessed_letter)
         
 
 
 hangman = Hangman(word_list1)
 
-print(hangman)
+hangman.ask_for_input()
 
 
 #for letter in self.word:
