@@ -1,3 +1,10 @@
+word = "hello"
+
+set1 = set(list(word))
+
+print(set1)
+print(len(set1))
+
 import random
 
 # create list
