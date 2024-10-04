@@ -29,7 +29,7 @@ class Hangman():
             print(f"you havve {self.num_lives}")
     
     def ask_for_input(self):
-        while True:
+        while self.num_lives > 0 and self.num_letters > 0:
             guessed_letter = input("Please guess a letter: ")
             if len(guessed_letter) > 1 and guessed_letter.isalpha() == False:
                 print("Invalid letter. Please, enter a single alphabetical character.")
@@ -46,11 +46,13 @@ def play_game(word_list):
     game = Hangman
     game = game(word_list, num_lives)
     while True:
-        if game.num_lives == 0:
+        if game.num_lives <= 0:
             print("You lost :(")
+            break
         elif game.num_letters > 0:
             game.ask_for_input()
         else:
             print("congratulations! You won.")
+            break
 
 play_game(word_list1)
